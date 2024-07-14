@@ -115,7 +115,7 @@ Description: config files for lite BunsenLabs Linux
  Memory usage and disk space should be slightly lower
  than with the standard configs package.
 
-Package: bunsen-configs-base
+Package: bunsen-configs-wbase
 Architecture: all
 Depends: ${misc:Depends}
 Recommends: bunsen-images-base,
@@ -123,17 +123,12 @@ Recommends: bunsen-images-base,
  bunsen-themes-base,
  bunsen-thunar,
  dmz-cursor-theme,
- jgmenu,
- lightdm,
- lightdm-gtk-greeter,
- lightdm-gtk-greeter-settings,
- nitrogen,
- openbox,
- polkitd-pkla,
+ greetd,
+ labwc-menu-generator,
+ nwg-hello,
  python3-xdg,
- scrot,
  sensible-utils,
- tint2,
+ sfwbar,
  xbindkeys,
  xcape,
  yad
@@ -142,15 +137,13 @@ Suggests: fonts-liberation,
  qt5-gtk-platformtheme,
  qt5-style-plugins,
  libqt5svg5,
- librsvg2-common,
- xfce4-clipman,
- xfce4-screenshooter
+ librsvg2-common
 Provides: ${diverted-files}
-Replaces: bunsen-configs, bunsen-configs-lite, bunsen-conky (<< 11.1-1)
+Replaces: bunsen-configs, bunsen-configs-lite, bunsen-configs-base, bunsen-conky (<< 11.1-1)
 Breaks: bunsen-conky (<< 11.1-1)
-Conflicts: ${diverted-files}, bunsen-configs, bunsen-configs-lite
-Description: config files for minimal BunsenLabs Linux
- Various configuration files for BunsenLabs Linux.
+Conflicts: ${diverted-files}, bunsen-configs, bunsen-configs-lite, bunsen-configs-base
+Description: config files for minimal wayland BunsenLabs Linux
+ Various configuration files for BunsenLabs Linux with wayland.
  Contains user config files to be copied into a new user's home directory,
  scripts and desktop files to set up the bl-alternatives system,
  and some other system configuration files.

@@ -1,3 +1,9 @@
+bunsen-configs (13.0-2) carbon; urgency=medium
+
+  * Configuration files for wayland to new packge bunsen-configs-wbase.
+
+ --Mick Amadio <01micko@gmail.com>  Sun, 14 Jul 2024 10:59:02  +1000
+
 bunsen-configs (13.0-1) carbon; urgency=medium
 
   * Migrate for Debian Bookworm

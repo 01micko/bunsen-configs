@@ -36,7 +36,8 @@
 ## Use the window manager's actual command, not name.
 ## This should be the first uncommented line in this file:
 ## NOTE: if you are using wayland you don't need to reset this if using 'labwc'
-## however can be changed to some other compositor like sway, hyprland, river etc
+## however can be changed to some other compositor like sway, hyprland, river etc.
+## (The variable "window_manager" here refers to a Wayland compositor.)
 window_manager=labwc
 
 # test if chosen window manager is actually running (you should probably not edit this line)
@@ -58,6 +59,41 @@ window_manager=labwc
 
 ## PolicyKit authentication
 hash lxpolkit 2>/dev/null && lxpolkit &
+
+#######################################################
+######## compositor (called "window_manager" here) dependent applications ########
+# these could be be things like panels, conky, wallpaper etc
+
+case "$window_manager" in
+labwc)
+    ## The following applications will only be started in a labwc session.
+    ## Add a new clause for your window manager, if different.
+
+    ## Start the Conky session (the default conkyrc will run if no sessions have been set)
+    # bl-conky-session &
+    ## The "base" install has no bl-conky-session script, so start conky directly:
+    #conky -c ~/.config/conky/BL-Default-conky.conf &
+
+    ## Install bunsen-utilities and bunsen-pipemenus
+    ## to get all the conky and tint2 management utilities.
+
+    ;;
+    # End of labwc application group.
+
+## clause for sway
+#sway)
+#    launch something &
+#   ;;
+
+## clause for river
+#river)
+#    launch something different &
+#    ;;
+
+esac
+
+####### end of compositor dependent section #######
+#######################################################
 
 ## Volume control for systray
 #pnmixer &
